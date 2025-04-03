@@ -6,7 +6,7 @@ Este repositório contém materiais educacionais sobre **centro de massa**, incl
 
 - 📜 **Apresentação**: [Link para os slides](https://www.canva.com/design/DAGdTUw5kW4/rVdgmxQuQNhEndvMMAx9_A/edit?utm_content=DAGdTUw5kW4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - 📄 **Trabalho escrito**: `centro_de_massa_de_uma_barra_250123_162535.pdf`
-- 📝 **Exercícios**: `Exercícios.pdf`https://www.canva.com/design/DAGdTUw5kW4/rVdgmxQuQNhEndvMMAx9_A/edit?utm_content=DAGdTUw5kW4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+- 📝 **Exercícios**: `Exercícios.pdf`
 
 
 ## 📖 Descrição
@@ -29,7 +29,4 @@ Sugestões e melhorias são bem-vindas! Sinta-se à vontade para abrir uma _issu
 Sinta-se à vontade para modificar esse README conforme necessário! 😃
 
 
-# centro-de-massa
-Link da apresentação 
 
-https://www.canva.com/design/DAGdTUw5kW4/rVdgmxQuQNhEndvMMAx9_A/edit?utm_content=DAGdTUw5kW4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
