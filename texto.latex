@@ -1,0 +1,457 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{graphicx} % Para inserção de imagens
+\usepackage{amssymb}  % Símbolos matemáticos
+\usepackage{amsmath}  % Fórmulas matemáticas
+\usepackage{pgfplots} % Gráficos
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{indentfirst} % Recuo no início do parágrafo
+\usepackage{geometry}   % Margens
+\usepackage{tocloft}    % Sumário customizado
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+
+
+% Configuração das margens
+\geometry{a4paper,left=3cm,right=2cm,top=3cm,bottom=2cm}
+
+% Configuração do sumário
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
+
+\begin{document}
+
+% CAPA
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=5.5cm]{logo.png}\\[0.5cm] % Substitua pelo nome do arquivo
+        \textbf{
+        {\large INSTITUTO FEDERAL DE EDUCAÇÃO,CIÊNCIAS} \\[0.25cm]
+        {\large E TECNOLOGIA DO MARANHÃO} \\[0.25cm]
+        {\large CAMPUS AÇAILÂNDIA} \\[2.5cm]
+        }
+
+        \textbf{
+        {\large  { \scshape Elessandro Silva de Sousa\\ Gustavo Ávalos Ferreira Silva\\ Rodrigo Macedo Oliveira }} \\[3cm]
+        }
+        
+        \textbf{
+        {\large  MASSA E CENTRO DE MASSA DE UMA BARRA} 
+        }
+        
+        \vfill
+        {\large Açailândia - MA} \\[0.25cm]
+        {\large Janeiro de 2025}
+    \end{center}
+\end{titlepage}
+
+% CONTRA CAPA
+\begin{titlepage}
+    \begin{center}
+        %{\large CENTRO DE MASSA} \\[1cm]
+
+        \textbf{
+        {\large { \scshape Elessandro Silva de Sousa\\ Gustavo Ávalos Ferreira Silva\\ Rodrigo Macedo Oliveira } } \\[4cm]
+        }
+
+        \textbf{
+        {\large MASSA E CENTRO DE MASSA DE UMA BARRA} \\[4cm]
+        }
+        %{\large Açailândia - MA} \\[0.5cm]
+        %{\large Janeiro de 2025}
+    \end{center}
+
+        \begin{flushright}
+            \parbox{7.9cm}{ % Largura da caixa de texto
+            Trabalho apresentado como requisito parcial para 
+            a obtenção de nota na disciplina Cálculo 
+            diferencial e integral II, ministrada pelo 
+            Professor Adão Nascimento dos Passos.
+            }
+        \end{flushright}
+
+    \begin{center}
+        \vfill
+        {\large Açailândia - MA} \\[0.25cm]
+        {\large Janeiro de 2025}
+    \end{center}
+\end{titlepage}
+
+% SUMÁRIO
+\tableofcontents
+\newpage
+
+% LISTA DE FIGURAS
+\listoffigures
+\newpage
+
+\chapter*{Introdução}
+\addcontentsline{toc}{chapter}{Introdução}
+\begingroup
+
+\setlength{\parskip}{0.2cm}
+O centro de massa de um corpo é um ponto (fictício) sobre o qual é possível considerar que toda a sua massa está concentrada, o que nos permite tratá-lo como um ponto material (ou partícula pontual). A localização desse ponto depende, naturalmente, da massa do corpo, bem como de sua forma geométrica, ou seja, depende da forma como a massa do corpo está distribuída.
+
+Tal definição de centro de massa aplica-se não apenas para um corpo rígido, podendo ser estendida para um sistema formado por N partículas (ou seja, formado por corpos separados). Dessa forma, o centro de massa de um sistema de N partículas é um ponto sobre o qual podemos considerar que a massa total (a soma das massas das N partículas) do sistema está concentrada.
+
+Ao analisarmos uma barra, um objeto aparentemente simples, podemos explorar de forma clara esse conceito. Em uma barra homogênea, o centro de massa coincide com o centro geométrico. No entanto, ao adicionarmos massa em uma das extremidades, o centro de massa se desloca. Essa propriedade é de fundamental importância em diversas áreas, como na engenharia civil, para o cálculo de momentos fletores em vigas, e na aeronáutica, para determinar o centro de gravidade de aeronaves.
+
+Neste estudo, vamos explorar de forma interativa e simples, como a distribuição de massa em uma barra influencia a localização de seu centro de massa, e como esse conceito é fundamental para encontrar o centro de massa de uma barra.
+\endgroup
+
+\chapter*{Massa e Centro de Massa de uma Barra}
+\addcontentsline{toc}{chapter}{Massa e Centro de Massa de uma Barra}
+
+\begingroup
+\setlength{\parskip}{0.2cm}
+Inicialmente, vamos descrever o conceito de centro de massa de um sistema constituído por um número finito de partículas, localizadas sobre um eixo $L$, de peso e espessura insignificantes.
+
+Vamos supor que o eixo $L$ esteja na posição horizontal e imaginemos que ele possa girar livremente em torno de um ponto $P$, como se nesse ponto fosse colocado um apoio (ver Figura 1).
+
+%\endgroup
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{3.jpg} % Substitua "caminho_da_imagem" pelo caminho do arquivo
+    \caption{}
+    \label{fig:ce}
+\end{figure}
+
+Se colocarmos sobre $L$ um objeto de peso $w_1$ a uma distância $d_1$, à direita de $P$, o peso do objeto fará $L$ girar no sentido horário (ver Figura 2 (a)). Colocando um objeto de peso $w_2$, a uma distância $d_2$ à esquerda de $P$, o peso desse objeto fará $L$ girar no sentido anti-horário (ver Figura 2 (b)).
+
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{IMG-20250110-WA0005.jpg}
+        \subcaption{}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{2.jpg}
+        \subcaption{}
+    \end{minipage}
+    \caption{}
+\end{figure}
+Colocando simultaneamente os dois objetos sobre $L$ (ver Figura 3), o equilíbrio ocorre quando
+\begin{equation}
+w_1 d_1 = w_2 d_2.
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{4.jpg} % Substitua "caminho_da_imagem" pelo caminho do arquivo
+    \caption{}
+    \label{fig:ce}
+\end{figure}
+
+Este resultado é conhecido como \textbf{Lei da Alavanca} e foi descoberto por Arquimedes. Na prática, podemos constatar isso quando duas crianças se balançam numa gangorra.
+
+Vamos, agora, orientar $L$ e fazê-lo coincidir com o eixo dos $x$ do sistema de coordenadas cartesianas. Se duas partículas de peso $w_1$ e $w_2$ estão localizadas nos pontos $x_1$ e $x_2$, respectivamente (ver Figura 4), podemos reescrever (1) como
+
+\begin{equation*}
+w_1 (x_1 - P) = w_2 (P - x_2) \quad \text{ou} \quad w_1 (x_1 - P) + w_2 (x_2 - P) = 0.
+\end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{IMG-20250110-WA0010.jpg} % Substitua "caminho_da_imagem" pelo caminho do arquivo
+    \caption{}
+    \label{fig:ce}
+\end{figure}
+
+Supondo que $n$ partículas de pesos $w_1, w_2, \dots, w_n$ estejam colocadas nos pontos $x_1, x_2, \dots, x_n$, respectivamente, o sistema estará em equilíbrio ao redor de $P$, quando
+\begin{equation}
+\sum_{i=1}^n w_i (x_i - P) = 0.
+\end{equation}
+
+Como o peso de um corpo é dado por $w = mg$, onde $g$ é a aceleração da gravidade e $m$ é a massa do corpo, considerando $g$ constante, podemos reescrever (2) como
+\begin{equation*}
+\sum_{i=1}^n m_i g (x_i - P) = 0,
+\end{equation*}
+ou de forma equivalente,
+\begin{equation*}
+\sum_{i=1}^n m_i (x_i - P) = 0.
+\end{equation*}
+
+A soma $\sum\limits_{i=1}^n m_i (x_i - P)$ mede a tendência do sistema girar ao redor do ponto $P$ e é chamada \textit{momento do sistema em relação a $P$}. Quando o momento é positivo, o giro se dá no sentido horário. Quando o momento é negativo, o giro se dá no sentido anti-horário e, obviamente, quando o momento é nulo o sistema está em equilíbrio.
+
+Se o sistema não está em equilíbrio, movendo o ponto $P$, podemos encontrar um ponto $\bar{x}$, de tal forma que ocorra o equilíbrio, isto é, um ponto $\bar{x}$ tal que o momento do sistema em relação a $\bar{x}$ seja nulo. O ponto $\bar{x}$ deve satisfazer
+
+
+\begin{equation*}
+\sum_{i=1}^n m_i (x_i - \bar{x}) = 0.
+\end{equation*}
+
+Resolvendo esta equação para $\bar{x}$, obtemos
+\begin{equation*}
+\sum_{i=1}^n m_i x_i -  \sum_{i=1}^n m_i\, \bar{x} = 0,
+\end{equation*}
+ou
+\begin{equation*}
+\bar{x} \sum_{i=1}^n m_i= \sum_{i=1}^n m_i x_i
+\end{equation*}
+ou ainda
+\begin{equation}
+    \bar{x} = \frac{\sum\limits_{i=1}^n m_i x_i}{\sum\limits_{i=1}^n m_i}
+\end{equation}
+
+O ponto $\bar{x}$ que satisfaz (3) é chamado \textbf{centro de massa do sistema dado}.\\
+
+Sob a hipótese de a aceleração da gravidade ser constante, $\bar{x}$ também é chamado \textbf{centro de gravidade do sistema}.\\
+É interessante observar que, na expressão (3), o numerador do lado direito é o momento do sistema em relação à origem e que o denominador é a massa total do sistema\\
+
+Queremos, a seguir, mostrar como a integração pode ser usada para estender essas ideias a um sistema que, ao invés de ser constituído por um número finito de partículas, apresenta uma distribuição contínua de massa.
+
+Consideremos uma barra horizontal rígida, de comprimento $l$. Se a sua densidade linear $\rho$, que é definida como massa por unidade de comprimento, é constante, dizemos que a barra é homogênea. Neste caso, intuitivamente, percebemos que a massa total da barra é dada por $\rho l$ e que o centro de massa deve estar localizado no ponto médio da barra.
+
+Suponhamos, agora, que temos uma barra não homogênea. Localizamos a barra sobre o eixo dos $x$, com as extremidades nos pontos $a$ e $b$, como a Figura 5.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{6.jpg} % Substitua "caminho_da_imagem" pelo caminho do arquivo
+    \caption{}
+    \label{fig:ce}
+\end{figure}
+Seja $\rho(x)$, $x \in [a, b]$, uma função contínua que representa a densidade linear da barra. Para encontrar a massa total da barra, vamos considerar uma partição $P$ de $[a, b]$, dada pelos pontos
+\[
+a = x_0 < x_1 < \dots < x_{n-1} < x_i <\cdots < x_n = b.
+\]
+
+Sejam $c_i$ um ponto qualquer do intervalo $[x_{i-1}, x_i]$ e $\Delta x_i = x_i - x_{i-1}$. Então, uma aproximação da massa da parte da barra entre $x_{i-1}$ e $x_i$ é dada por:
+\[
+\Delta m_i = \rho(c_i) \Delta x_i,
+\]
+e
+\begin{equation}
+\sum_{i=1}^n \Delta m_i = \sum_{i=1}^n \rho(c_i) \Delta x_i
+\end{equation}
+constitui uma aproximação da massa total da barra.
+
+Podemos observar que, à medida que $n$ cresce muito e cada $\Delta x_i \to 0$, a soma (4) se aproxima do que intuitivamente entendemos como massa total da barra.
+
+
+
+
+Assim, como (4) é uma soma de Riemann da função contínua $\rho(x)$, podemos definir a massa total da barra como
+\begin{equation}
+    m = \int_{a}^{b} \rho(x) \, dx 
+\end{equation}
+
+Para encontrarmos o centro de massa da barra, precisamos primeiro encontrar o momento da barra em relação à origem.
+
+Procedendo de acordo com as hipóteses e notações anteriores, obtemos que $c_i \Delta m_i$ é uma aproximação do momento em relação à origem, da parte da barra que está entre $x_{i-1}$ e $x_i$, e que
+\begin{equation}
+    \sum_{i = 1}^{n} c_i \Delta m_i = \sum_{i = 1}^{n} c_i \rho(c_i) \Delta x_i
+\end{equation}
+
+é uma aproximação do momento da barra em relação à origem.
+
+Como a soma (6) é uma de Riemann da função contínua $x \rho(x)$, podemos definir o momento da barra em relação à origem como
+\begin{equation}
+    M_0 = \int_{a}^{b} x \rho(x) \, dx
+\end{equation}
+
+Então, entendendo a expressão (3) para a barra, obtemos o seu centro de massa $\bar{x}$, que é dado por
+\endgroup
+
+\begin{equation}
+    \bar{x} = \frac{1}{m} \int_{a}^{b} x \rho(x) \, dx \tag{8}
+\end{equation}
+
+\chapter*{Exemplos}
+\addcontentsline{toc}{chapter}{Exemplos}
+
+\subsection*{Exemplo (i):}
+Usando (8), verificar que o centro de massa de uma barra homogênea está no seu ponto médio.
+
+
+\subsubsection*{Solução} 
+Seja $l$ o comprimento da barra e $\rho$ a sua densidade linear. Localizando a barra sobre o eixo dos $x$ com extremidades nos pontos $a$ e $b$, temos:
+\begin{align*}
+    m &= \int_{a}^{b} \rho \, dx \\
+      &= \rho \int_a^b dx \\
+      &= \rho \, (b - a) \\
+      &= \rho l \quad \text{(unidades de massa);}
+\end{align*}
+
+\begin{align*}
+    \bar{x} &= \frac{1}{m} \int_{a}^{b} x \rho \, dx \\[0.2cm]
+            &= \frac{\rho}{\rho l} \int_a^b x \, dx \\[0.2cm]
+            &= \frac{1}{l} \int_a^b x \, dx \\[0.2cm]
+            &= \frac{1}{l}\, \frac{x^2}{2}\Big|_a^b \\[0.2cm]
+            &= \frac{1}{l} \frac{1}{2} (b^2 - a^2) \\[0.2cm]
+            &= \frac{1}{2l} (b^2 - a^2)
+\end{align*}
+
+\[
+    = \frac{1}{2l} (b - a)\cdot (b + a)
+\]
+\noindent
+Como $b - a = l$, temos:
+\[
+\bar{x} = \frac{b - a}{2}
+\]
+ou seja, $\bar{x}$ est\'a sobre o ponto m\'edio da barra.\\
+
+\noindent
+Neste exemplo, fica claro que a localiza\c{c}\~ao do centro de massa em rela\c{c}\~ao \`a barra n\~ao depende da posi\c{c}\~ao da barra em rela\c{c}\~ao \`a origem. Na pr\'atica, podemos sempre escolher a posi\c{c}\~ao mais conveniente de forma a facilitar os c\'alculos.
+
+\subsection*{Exemplo (ii):}
+
+\noindent
+Uma barra mede 6 m de comprimento. A densidade linear em um ponto qualquer da barra \'e proporcional \`a dist\^ancia desse ponto a um ponto $q$, que est\'a sobre o prolongamento da linha da barra, a uma dist\^ancia de 3 m da mesma. Sabendo que na extremidade mais pr\'oxima a $q$, a densidade linear \'e $1$ kg/m, determinar a massa e o centro de massa da barra.
+
+\subsubsection*{Solu\c{c}\~ao:}
+
+A Figura 6 mostra a barra localizada sobre o eixo dos $x$:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{7.jpg} % Substitua "caminho_da_imagem" pelo caminho do arquivo
+    \caption{}
+    \label{fig:ce}
+\end{figure}
+
+\noindent
+A dist\^ancia de um ponto $x$ da barra at\'e $q$ \'e dada por:
+
+
+\begin{align*}
+    d &= x - (-3)\\ 
+    &= x + 3.
+\end{align*}
+
+
+
+\noindent
+Como a densidade \'e proporcional \`a dist\^ancia $d$, temos:
+\[
+\rho(x) = k(x + 3),
+\]
+onde $k$ \'e uma constante de proporcionalidade.
+
+\noindent
+Como $\rho(0) = 1$ kg/m, substituindo na express\~ao anterior, vem:
+\[
+1 = k(0 + 3) \quad \Rightarrow \quad k = \frac{1}{3}.
+\]
+
+\noindent
+Portanto:
+\[
+\rho(x) = \frac{1}{3}(x + 3), \quad \forall x \in [0, 6].
+\]
+
+\noindent
+A massa da barra \'e dada por:
+\[
+m = \int_{0}^{6} \rho(x) \, dx = \int_{0}^{6} \frac{1}{3}(x + 3) \, dx.
+\]
+
+\noindent
+Resolvendo a integral:
+\[
+m = \frac{1}{3} \int_{0}^{6} (x + 3) \, dx = \frac{1}{3} \left( \frac{x^2}{2} + 3x \right)\Bigg|_{0}^{6}
+\]
+
+\noindent
+Substituindo os limites:
+\[
+m = \frac{1}{3} \left[ \frac{6^2}{2} + 3(6) - \left( \frac{0^2}{2} + 3(0) \right) \right] = \frac{1}{3} \left[ 18 + 18 \right] = 12 \, \text{kg}.
+\]
+
+\subsubsection*{Centro de Massa}
+
+\noindent
+O centro de massa da barra \'e dado por:
+\[
+\bar{x} = \frac{1}{m} \int_{0}^{6} x \rho(x) \, dx = \frac{1}{12} \int_{0}^{6} x \left( \frac{1}{3}(x + 3) \right) \, dx.
+\]
+
+\noindent
+Simplificando:
+\[
+\bar{x} = \frac{1}{12} \cdot \frac{1}{3} \int_{0}^{6} x(x + 3) \, dx = \frac{1}{36} \int_{0}^{6} (x^2 + 3x) \, dx.
+\]
+
+\noindent
+Resolvendo a integral:
+\[
+\int_{0}^{6} (x^2 + 3x) \, dx = \left( \frac{x^3}{3} + \frac{3x^2}{2} \right)\Bigg|_{0}^{6}
+\]
+
+\noindent
+Substituindo os limites:
+\[
+\int_{0}^{6} (x^2 + 3x) \, dx = \left[ \frac{6^3}{3} + \frac{3(6^2)}{2} \right] - \left[ \frac{0^3}{3} + \frac{3(0^2)}{2} \right] = 72 + 54 = 126.
+\]
+
+\noindent
+Portanto:
+\[
+\bar{x} = \frac{1}{36} \cdot 126 = 3.5 \, \text{m}.
+\]
+
+\noindent
+Assim, a massa da barra \'e $12 \, \text{kg}$ e o centro de massa est\'a localizado a $3.5 \, \text{m}$ da extremidade esquerda.
+
+\subsection*{Exemplo (iii):}
+
+Determinar o centro de massa de uma barra de $5 \, \text{m}$ de comprimento, sabendo que num ponto $q$, que dista $1 \, \text{m}$ de uma das extremidades, a densidade é $2 \, \text{kg/m}$ e que nos demais pontos ela é dada por $(2 + d) \, \text{kg/m}$, onde $d$ é a distância até o ponto $q$.
+
+\subsubsection*{Solução}
+
+Localizamos a barra sobre o eixo dos $x$ como mostra a Figura 7:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{8.jpg} % Substitua "caminho_da_imagem" pelo caminho do arquivo
+    \caption{}
+    \label{fig:ce}
+\end{figure}
+
+Podemos expressar a densidade da barra pela função:
+\[
+\rho(x) =
+\begin{cases}
+2, & x = 4, \\
+2 + (4 - x) = 6 - x, & 0 \leq x < 4, \\
+2 + (x - 4) = x - 2, & 4 < x \leq 5.
+\end{cases}
+\]
+
+A massa da barra é dada por:
+\[
+m = \int_{0}^{5} \rho(x) \, dx = \int_{0}^{4} (6 - x) \, dx + \int_{4}^{5} (x - 2) \, dx.
+\]
+
+Resolvendo as integrais:
+\[
+\int_{0}^{4} (6 - x) \, dx = \left( 6x - \frac{x^2}{2} \right)\Bigg|_{0}^{4} = (24 - 8) = 16,
+\]
+\[
+\int_{4}^{5} (x - 2) \, dx = \left(\frac{x^2}{2} - 2x\right)\Bigg|_{4}^{5} = \left(\frac{25}{2} - 10\right) - \left(\frac{16}{2} - 8\right) = 2.5.
+\]
+
+Somando:
+\[
+m = 16 + 2.5 = 18.5 \, \text{kg}.
+\]
+
+O centro de massa é dado por:
+\[
+\bar{x} = \frac{1}{m} \int_{0}^{5} x \rho(x) \, dx.
+\]
+
+Resolvendo com os valores apropriados, podemos calcular o centro de massa.
+\newpage
+\chapter*{Referências}
+\addcontentsline{toc}{chapter}{Referências}
+
+\textbf{Halliday}, D.; Resnick, R.; Walker, J. Fundamentos de Física.
+\end{document}
