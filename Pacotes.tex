@@ -1,0 +1,51 @@
+\documentclass[12pt,a4paper]{report} % Define o tipo de documento como "report", fonte 12pt, papel A4
+
+% -------------------------------------------------------
+% PACOTES DE IDIOMA E CODIFICAÇÃO
+% -------------------------------------------------------
+
+\usepackage[portuguese]{babel}     % Tradução automática de elementos (ex: "Capítulo", "Sumário") para português
+\usepackage[utf8]{inputenc}        % Permite acentuação direta no código-fonte com codificação UTF-8
+\usepackage[T1]{fontenc}           % Usa codificação de fontes que melhora a hifenização e saída dos caracteres acentuados
+
+% -------------------------------------------------------
+% PACOTES PARA MATEMÁTICA E SIMBOLOGIA
+% -------------------------------------------------------
+
+\usepackage{amssymb}               % Pacote de símbolos matemáticos (como conjuntos ℝ, ℕ, etc.)
+\usepackage{amsmath}               % Permite o uso de ambientes e comandos matemáticos mais avançados
+\usepackage{pgfplots}              % Criação de gráficos diretamente no LaTeX com base em coordenadas
+
+% -------------------------------------------------------
+% PACOTES PARA IMAGENS E FIGURAS
+% -------------------------------------------------------
+
+\usepackage{graphicx}              % Inclusão de imagens externas (.png, .jpg, .pdf, etc.)
+\usepackage{float}                 % Permite posicionamento preciso de figuras/tabelas com [H]
+\usepackage{wrapfig}               % Permite envolver texto ao redor de imagens (figuras flutuantes)
+\usepackage{subcaption}           % Permite criar subfiguras com legendas independentes
+
+% -------------------------------------------------------
+% PACOTES PARA FORMATAÇÃO DO DOCUMENTO
+% -------------------------------------------------------
+
+\usepackage{indentfirst}           % Faz com que o primeiro parágrafo de cada seção seja indentado
+\usepackage{geometry}              % Configuração de margens e dimensões da página
+\usepackage{tocloft}               % Personalização do sumário (fontes, espaçamentos, estilo)
+
+% -------------------------------------------------------
+% CONFIGURAÇÕES ESPECÍFICAS
+% -------------------------------------------------------
+
+% Configuração das margens do documento
+\geometry{a4paper, left=3cm, right=2cm, top=3cm, bottom=2cm}
+
+% Customização da aparência do sumário
+\renewcommand{\cftchapfont}{\bfseries}        % Capítulos em negrito
+\renewcommand{\cftsecfont}{\normalfont}       % Seções em fonte normal
+\renewcommand{\cftsubsecfont}{\normalfont}    % Subseções em fonte normal
+\renewcommand{\cftchappagefont}{\normalfont}  % Número da página do capítulo em fonte normal
+
+\begin{document}
+% Seu conteúdo aqui...
+\end{document}
